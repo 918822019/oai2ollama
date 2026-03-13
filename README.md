@@ -80,3 +80,11 @@ To have the server listen on a different host, like all IPv6 interfaces, use the
 ```sh
 docker run -p 11434:11434 oai2ollama --host "::"
 ```
+
+## Features
+
+- Ollama-compatible `/api/tags`, `/api/show`, and `/api/version` endpoints
+- OpenAI-compatible `/v1/chat/completions` and `/v1/models` endpoints (passthrough)
+- Streaming response support
+- Configurable model list with extra models
+- Customizable capabilities (`tools`, `insert`, `vision`, `embedding`, `thinking`)

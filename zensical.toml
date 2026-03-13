@@ -2,14 +2,14 @@
 site_name = "oai2ollama"
 site_description = "Wrap any OpenAI-compatible API into an Ollama-compatible API."
 site_url = "https://oai2ollama.vercel.app"
-repo_url = "https://github.com/CNSeniorious000/oai2ollama"
-repo_name = "CNSeniorious000/oai2ollama"
+repo_url = "https://github.com/918822019/oai2ollama"
+repo_name = "918822019/oai2ollama"
 site_author = "Muspi Merol"
 extra_css = ["stylesheets/extra.css"]
 
 [[project.extra.social]]
 icon = "material/github"
-link = "https://github.com/CNSeniorious000/oai2ollama"
+link = "https://github.com/918822019/oai2ollama"
 name = "GitHub Repository"
 
 [[project.extra.social]]
