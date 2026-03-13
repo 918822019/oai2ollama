@@ -1,4 +1,4 @@
-from fastapi import Depends, FastAPI, Request
+from fastapi import Depends, FastAPI, Request, Response
 from fastapi.responses import StreamingResponse
 
 from .config import env
@@ -16,11 +16,13 @@ async def _new_client():
 
 @app.get("/api/tags")
 async def models(client=_new_client):
+    from httpx import HTTPStatusError
+
     res = await client.get("/models")
-    res.raise_for_status()
     try:
+        res.raise_for_status()
         data = res.json()["data"]
-    except (KeyError, TypeError):
+    except (HTTPStatusError, KeyError, TypeError):
         data = []
     models_map = {i["id"]: {"name": i["id"], "model": i["id"]} for i in data} | {i: {"name": i, "model": i} for i in env.extra_models}
     return {"models": list(models_map.values())}
@@ -37,8 +39,7 @@ async def show_model():
 @app.get("/v1/models")
 async def list_models(client=_new_client):
     res = await client.get("/models")
-    res.raise_for_status()
-    return res.json()
+    return Response(content=res.content, status_code=res.status_code, media_type=res.headers.get("content-type", "application/json"))
 
 
 @app.post("/v1/chat/completions")
