@@ -18,6 +18,8 @@ uv sync
 
 ## Running Locally
 
+Use `uv run` to run from your local source (this ensures your local code is used, not the PyPI-published package):
+
 ```sh
-oai2ollama --help
+uv run oai2ollama --help
 ```
