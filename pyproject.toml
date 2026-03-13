@@ -15,7 +15,7 @@ dependencies = [
 
 [project.urls]
 documentation = "https://oai2ollama.vercel.app/"
-repository = "https://github.com/CNSeniorious000/oai2ollama"
+repository = "https://github.com/918822019/oai2ollama"
 
 [project.scripts]
 oai2ollama = "oai2ollama:start"
