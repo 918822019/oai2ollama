@@ -8,11 +8,21 @@ which is useful for providing custom models for coding agents that don't support
 
 ### with Python
 
-You can run directly via `uvx` (if you have `uv` installed) or `pipx`:
+If you have cloned this repository and want to run from **local source** (e.g. after making your own changes), install dependencies first and then use `uv run`:
+
+```sh
+uv sync
+uv run oai2ollama --help
+```
+
+Alternatively, you can run the **published PyPI package** directly via `uvx` (if you have `uv` installed) or `pipx`:
 
 ```sh
 uvx oai2ollama --help
 ```
+
+> [!NOTE]
+> `uvx oai2ollama` always runs the version published to PyPI, **not** your local code. Use `uv run oai2ollama` (after `uv sync`) to ensure your local changes are used.
 
 ```text
 usage: oai2ollama [--api-key str] [--base-url HttpUrl] [--capabilities list[str]] [--models list[str]] [--host str]
